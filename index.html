@@ -229,6 +229,195 @@
             
               
                 
+                <a class="post-title-link" href="/2016/04/21/zifujishu/" itemprop="url">
+                  字符计数
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-21T17:15:02+08:00" content="2016-04-21">
+              2016-04-21
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>编写一个函数countBs,接受两个字符串参数，并返回一个数字，便是该字符串中有多少个与第二个参数一样的字符。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function countBs(a,b)&#123;</span><br><span class="line">    //a= String(a);</span><br><span class="line">    var c = 0 ;</span><br><span class="line">    for(var n=0;n&lt;a.length;n++)</span><br><span class="line">        if (a.charAt(n)==b)\\&quot;string&quot;.charAt(N)可以获取该字符串中的第N个字符，类似于.length用法</span><br><span class="line">         c += 1;</span><br><span class="line">        return c;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line">console.log(countBs(&quot;BBC&quot;,&quot;C&quot;));</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/14/bibao/" itemprop="url">
+                  闭包
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-14T17:03:10+08:00" content="2016-04-14">
+              2016-04-14
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function multiplier(factor)&#123;</span><br><span class="line">    return function(number)&#123;</span><br><span class="line">        return number * factor ;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">var twice = multiplier(2);</span><br><span class="line">console.log(twice(5));</span><br></pre></td></tr></table></figure>
+<p>这是一个可以乘以任意数字的函数<br>由于参数自身就是局部变量，因此我们不需要声明localVaraible变量<br>我们可以把关键字function当做一种“冻结”代码并将其打包成函数值的模型。所以当你看到<code>`return function（…）{…}</code>这样的代码时，可以将其理解成一个句柄，其中句柄指向一段包装好的计算代码。<br>在本例中，multiplier返回了一段打包好的代码片段，并将其存储在twice变量中。最后一行调用了存储在该变量中的值，也就是调用multiplier创建的代码片段，随后将代码片段解包，并将5作为参数number传递给这段代码。</p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/11/qipan/" itemprop="url">
                   棋盘JS
                 </a>
@@ -374,7 +563,7 @@
         
           
             <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var result=1;</span><br><span class="line">   for (var counter = 0 ;counter &lt; 10;counter = counter + 1)</span><br><span class="line">   result= result * 2</span><br><span class="line">    console.log(result);</span><br><span class="line">// 1024</span><br></pre></td></tr></table></figure>
-<p>当counter=0时，result=2，counter+1，counter&lt;10,继续；<br>当counter=1时，result=2<em>2，counter+1，counter&lt;10,继续；<br>……<br>当counter=9时，result=512</em>2，counter+1，counter&lt;10,停止；</p>
+<p>当counter=0时，result=2，counter+1，counter&lt;10,继续；<br>当counter=1时，result=2*2，counter+1，counter&lt;10,继续；<br>……<br>当counter=9时，result=512*2，counter+1，counter&lt;10,停止；</p>
 
           
         
@@ -644,7 +833,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>
