@@ -229,6 +229,489 @@
             
               
                 
+                <a class="post-title-link" href="/2016/06/06/xiangliang/" itemprop="url">
+                  构造函数
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-06T16:43:55+08:00" content="2016-06-06">
+              2016-06-06
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>编写一个构造函数Vector，以二维空间表示数组。该函数接受两个数字参数x和y，并将其保存到对象的同名属性中。<br>向Vector原型添加两个方法：plus 和 minus，他们接受另一个向量作为参数，分别返回两个向量（一个是this，另一个是参数）的向量和和向量差。<br>向原型添加一个getter属性length，用于计算向量长度，即点（x,y）与原点（0,0）之间的距离。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function Vector(x,y)&#123;</span><br><span class="line">    this.x = x ;</span><br><span class="line">    this.y = y ;</span><br><span class="line">&#125;</span><br><span class="line">Vector.prototype.plus = function (other)&#123;</span><br><span class="line">    return new Vector (this.x + other.x , this.y + other.y); </span><br><span class="line">&#125;</span><br><span class="line">Vector.prototype.minus = function (other)&#123;</span><br><span class="line">    return new Vector (this.x - other.x , this.y - other.y);</span><br><span class="line">&#125;</span><br><span class="line">Object.defineProperty(Vector.prototype , &quot;length&quot; , &#123;</span><br><span class="line">    get : function()&#123;</span><br><span class="line">        return Math.sqrt(this.x * this.x + this.y * this.y); &#125; //直角三角形的第三条边的计算公式a\^2 + b\^2 = c\^2</span><br><span class="line">&#125;);</span><br><span class="line">console.log(new Vector (1,2).plus(new Vector(2,3)));//这里的other并不是一个单独的参数了</span><br><span class="line">console.log(new Vector (1,2).minus(new Vector(2,3)));</span><br><span class="line">console.log(new Vector (3,4).length);</span><br></pre></td></tr></table></figure></p>
+<p>构造函数是神马？<br>通过关键字new创建的对象称之为构造函数的实例<br>getter与setter<br>在对象中，get和set方法用于指定属性的读取函数和修改函数。向已存在单独对象中添加这类属性，可以使用Object.defineProperty函数向原型添加属性。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Object.defineProperty(TextCell.prototype,&quot;heighProp&quot;,&#123;</span><br><span class="line">    get : function()&#123;return this.text.length;&#125;</span><br><span class="line">&#125;);</span><br><span class="line">var cell = new TextCell(&quot;no\nway&quot;);</span><br><span class="line">console.log(cell.heightProp);</span><br><span class="line">//→2</span><br><span class="line">cell.heightProp = 100 ;</span><br><span class="line">console.log(cell.heightProp);</span><br><span class="line">//→2</span><br></pre></td></tr></table></figure></p>
+<p>在这里，为什么第二个console也是2呢？因为……<br>当定义了获取器但未定义设置器时（get了但是没set）JS会简单地忽略所有属性修改操作。P85</p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/05/09/shuzujiangwei/" itemprop="url">
+                  数组降维的几种方式(reduce&concat)
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-05-09T17:33:20+08:00" content="2016-05-09">
+              2016-05-09
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>最简单的遍历版本:遍历二维数组的每个元素并放入到新数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function reduceDimension(arr) &#123;</span><br><span class="line">    var reduced = [];</span><br><span class="line">    for (var i = 0; i &lt; arr.length; i++) &#123;</span><br><span class="line">        for (var j = 0; j &lt; arr[i].length; j++) &#123;</span><br><span class="line">            reduced.push(arr[i][j]);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return reduced;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>用concat方法：将参数加入到数组里，合并为一维数组<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function reduceDimension(arr) &#123;</span><br><span class="line">    var reduced = [];</span><br><span class="line">    for (var i = 0; i &lt; arr.length; i++)&#123;</span><br><span class="line">        reduced = reduced.concat(arr[i]);</span><br><span class="line">    &#125;</span><br><span class="line">    return reduced;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>用reduce和concat ：reduce是一个针对数组的汇总函数，用于做运算和比较。<br>reduce 看起来总是要有一个函数的<br>这个函数可以理解成“要执行什么动作”的解释<br>这个函数通常有a,b两个参数<br>如果a+b那就代表把数组里的元素累加<br>a.concat(b)代表把数组里的元素结合起来（适用于多维数组）<br>此时的a,b并不需要再次传一个明确的参数进去，只是指代一个操作。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">var arrays = [[1, 2, 3], [4, 5], [6]];</span><br><span class="line"></span><br><span class="line">console.log(arrays.reduce(function(flat, current) &#123;</span><br><span class="line">  return flat.concat(current);</span><br><span class="line">&#125;, []));//[]代表初始值，可以没有。</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/29/equal/" itemprop="url">
+                  比较相等（=  ==  ===）
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-29T18:15:48+08:00" content="2016-04-29">
+              2016-04-29
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>= 赋值<br>== 一般比较 值或类型有一点相同即 true<br>=== 严格比较 必须值和类型都相同才 true</p>
+<p>==比较时，只有a和b引用同一个值（声明a=b时）结果才会返回true<br>比较两个不同对象时返回false，即使他们的属性值是相同的（下例中的object1.value和object3.value）<br><figure class="highlight plain"><figcaption><span>object1 = &#123; value : 10 &#125;;</span></figcaption><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">var object2 = object1 ;</span><br><span class="line">var object3 = &#123; value : 10 &#125;;</span><br><span class="line"></span><br><span class="line">console.log( object1 == object2 );</span><br><span class="line">//→ true</span><br><span class="line">console.log( object1 == object3 );</span><br><span class="line">//→ false</span><br><span class="line"></span><br><span class="line">object1.value = 15 ;</span><br><span class="line">console.log(object2.value);</span><br><span class="line">//→ 15</span><br><span class="line">console.log(object3.value);</span><br><span class="line">//→ 10</span><br><span class="line"></span><br><span class="line">console.log(object.value == object3.value);</span><br><span class="line">//→ true</span><br></pre></td></tr></table></figure></p>
+
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/29/bianli/" itemprop="url">
+                  遍历映射表
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-29T18:09:16+08:00" content="2016-04-29">
+              2016-04-29
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>对象可以用来当做映射表，将名称和值关联起来。<br>可以使用in运算符确定对象中是否包含特定名称的属性。<br>可以在for循环中（for (var name in object)）使用关键字 in 来遍历对象中包含的属性。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">for (var eventinmap) </span><br><span class="line">   console.log(&quot;The correlation for&apos; &quot;+ event +&quot; &apos;is&quot;+ map[event]);</span><br><span class="line">//→ The correlation for &apos;pizza&apos; is 0.069</span><br><span class="line">//→ The correlation for &apos;touch tree&apos; is -0.081</span><br></pre></td></tr></table></figure>
+<p>映射表内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var map = &#123;&#125; ;</span><br><span class="line">function storePhi(event , phi)&#123;</span><br><span class="line">   map[event] = phi;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">storePhi(&quot;pizza&quot;,0.069);</span><br><span class="line">storePhi(&quot;touch tree&quot;,-0.081);</span><br><span class="line">console.log(&quot;pizza&quot; in map);</span><br><span class="line">//→ true</span><br><span class="line">console.log(map[&quot;touch tree&quot;]);</span><br><span class="line">//→ -0.081</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
+                <a class="post-title-link" href="/2016/04/29/shuzu/" itemprop="url">
+                  数组的一些方法
+                </a>
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-04-29T18:05:08+08:00" content="2016-04-29">
+              2016-04-29
+            </time>
+          </span>
+
+          
+
+          
+            
+          
+
+          
+
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <p>push ： 向数组的末尾添加值<br>pop  ： 与push相反，删除数组末尾的值并返回给调用者<br>join ： 将字符串数组拼成单个字符串。join方法的参数是链接数组元素之间的文本内容<br>unshift ：在数组末尾添加元素<br>shift ：在数组末尾删除元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">var mack = [] ;</span><br><span class="line">mack.push(&quot;Mack&quot;);</span><br><span class="line">mack.push(&quot;the&quot;,&quot;Knife&quot;);</span><br><span class="line">console.log(mack);</span><br><span class="line">// →[&quot;Mack&quot;,&quot;the&quot;,&quot;Knife&quot;]</span><br><span class="line"></span><br><span class="line">console.log(mack.join(&quot;&quot;));</span><br><span class="line">// →[Mack the Knife]</span><br><span class="line"></span><br><span class="line">console.log(mack.pop());</span><br><span class="line">// →Knife</span><br><span class="line"></span><br><span class="line">console.log(mack);</span><br><span class="line">// →[&quot;Mack&quot;,&quot;the&quot;]</span><br><span class="line"></span><br><span class="line">mack.unshift(&quot;eat&quot;);</span><br><span class="line">console.log(mack);</span><br><span class="line">// →[&quot;eat&quot;,&quot;Mack&quot;,&quot;the&quot;]</span><br><span class="line">mack.shift();</span><br><span class="line">console.log(mack);</span><br><span class="line">// →[&quot;Mack&quot;,&quot;the&quot;]</span><br></pre></td></tr></table></figure>
+<p>indexOf : 从数组第一个元素向后搜索，找出与参数相等的值在数组中的位置<br>lastIndexOf : 从数组最后一个元素向前搜索，找出与参数相等的值在数组中的位置<br>他们都接受一个可选参数，可以用来指定搜索的起始位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log([1,2,3,4,5].indexOf(2));</span><br><span class="line">// →1</span><br><span class="line">console.log([1,2,3,4,5].lastindexOf(2));</span><br><span class="line">// →3</span><br></pre></td></tr></table></figure>
+<p>slice : 该方法接受一个起始索引和一个结束索引，然后返回数组中两个索引范围内的元素。起始索引元素包含在返回结果中，但结束索引元素不会包含在返回结果中。<br>如果没有指定结束索引，slice会返回自起始位置之后的所有元素。对字符串来说，他也有一个具有相同功能的slice方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.log([0,1,2,3,4].slice(2,4));</span><br><span class="line">// →[2,3]</span><br><span class="line">console.log(&quot;coconuts&quot;.slice(4,7));</span><br><span class="line">// →nut</span><br><span class="line">console.log([0,1,2,3,4].slice(2));</span><br><span class="line">// →[2,3,4]</span><br></pre></td></tr></table></figure>
+<p>concat : 用于拼接两个数组，其作用类似于字符串的+运算符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function remove(array,index)&#123;</span><br><span class="line">  return array.slice(0,index).concat(array.slice(index+1));</span><br><span class="line">&#125;</span><br><span class="line">console.log(remove([&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;],2));</span><br><span class="line">// →[&quot;a&quot;,&quot;b&quot;,&quot;d&quot;,&quot;e&quot;],</span><br></pre></td></tr></table></figure>
+          
+        
+      
+    </div>
+    
+    <div>
+      
+    </div>
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                
                 <a class="post-title-link" href="/2016/04/21/zifujishu/" itemprop="url">
                   字符计数
                 </a>
@@ -690,111 +1173,13 @@
 
 
     
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/04/08/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-08T17:05:18+08:00" content="2016-04-08">
-              2016-04-08
-            </time>
-          </span>
-
-          
-
-          
-            
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
-        
-      
-    </div>
-    
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
   </section>
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
+  </nav>
+
 
 
           </div>
@@ -833,7 +1218,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">11</span>
               <span class="site-state-item-name">日志</span>
             </a>
           </div>

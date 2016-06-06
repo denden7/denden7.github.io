@@ -80,24 +80,19 @@
 
 
 
-<meta name="description" content="递归，就是在计算中自己不断引用自己递，可以理解成传递参数，滚雪球一样不断传递归，就是传送的终止，没有归，运算就不会停止
-阶乘，就是123… 即n!=123..n用递归方式表达就是n!=(n-1)!×n
-123456789function fac(n)&amp;#123;if(n==0)   return 1; else   return fac(n-1)*n;&amp;#125;console.log(fac(8">
+<meta name="description" content="push ： 向数组的末尾添加值pop  ： 与push相反，删除数组末尾的值并返回给调用者join ： 将字符串数组拼成单个字符串。join方法的参数是链接数组元素之间的文本内容unshift ：在数组末尾添加元素shift ：在数组末尾删除元素
+123456789101112131415161718192021var mack = [] ;mack.push(&amp;quot;Mack&amp;quot;)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="递归 阶乘">
-<meta property="og:url" content="http://yoursite.com/2016/04/08/My-New-Post/index.html">
+<meta property="og:title" content="数组的一些方法">
+<meta property="og:url" content="http://yoursite.com/2016/04/29/shuzu/index.html">
 <meta property="og:site_name" content="则卷小羽的笔记">
-<meta property="og:description" content="递归，就是在计算中自己不断引用自己递，可以理解成传递参数，滚雪球一样不断传递归，就是传送的终止，没有归，运算就不会停止
-阶乘，就是123… 即n!=123..n用递归方式表达就是n!=(n-1)!×n
-123456789function fac(n)&amp;#123;if(n==0)   return 1; else   return fac(n-1)*n;&amp;#125;console.log(fac(8">
-<meta property="og:image" content="http://img.mukewang.com/5704a2d900017c7905020396.png">
-<meta property="og:updated_time" content="2016-04-11T08:26:01.951Z">
+<meta property="og:description" content="push ： 向数组的末尾添加值pop  ： 与push相反，删除数组末尾的值并返回给调用者join ： 将字符串数组拼成单个字符串。join方法的参数是链接数组元素之间的文本内容unshift ：在数组末尾添加元素shift ：在数组末尾删除元素
+123456789101112131415161718192021var mack = [] ;mack.push(&amp;quot;Mack&amp;quot;)">
+<meta property="og:updated_time" content="2016-04-29T10:17:37.236Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="递归 阶乘">
-<meta name="twitter:description" content="递归，就是在计算中自己不断引用自己递，可以理解成传递参数，滚雪球一样不断传递归，就是传送的终止，没有归，运算就不会停止
-阶乘，就是123… 即n!=123..n用递归方式表达就是n!=(n-1)!×n
-123456789function fac(n)&amp;#123;if(n==0)   return 1; else   return fac(n-1)*n;&amp;#125;console.log(fac(8">
-<meta name="twitter:image" content="http://img.mukewang.com/5704a2d900017c7905020396.png">
+<meta name="twitter:title" content="数组的一些方法">
+<meta name="twitter:description" content="push ： 向数组的末尾添加值pop  ： 与push相反，删除数组末尾的值并返回给调用者join ： 将字符串数组拼成单个字符串。join方法的参数是链接数组元素之间的文本内容unshift ：在数组末尾添加元素shift ：在数组末尾删除元素
+123456789101112131415161718192021var mack = [] ;mack.push(&amp;quot;Mack&amp;quot;)">
 
 
 
@@ -115,7 +110,7 @@
   };
 </script>
 
-  <title> 递归 阶乘 | 则卷小羽的笔记 </title>
+  <title> 数组的一些方法 | 则卷小羽的笔记 </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -235,7 +230,7 @@
             
             
               
-                递归 阶乘
+                数组的一些方法
               
             
           </h1>
@@ -247,8 +242,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-04-08T17:14:34+08:00" content="2016-04-08">
-              2016-04-08
+            <time itemprop="dateCreated" datetime="2016-04-29T18:05:08+08:00" content="2016-04-29">
+              2016-04-29
             </time>
           </span>
 
@@ -275,12 +270,14 @@
       
 
       
-        <p>递归，就是在计算中自己不断引用自己<br>递，可以理解成传递参数，滚雪球一样不断传递<br>归，就是传送的终止，没有归，运算就不会停止</p>
-<p>阶乘，就是123… 即n!=123..n<br>用递归方式表达就是n!=(n-1)!×n</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function fac(n)&#123;</span><br><span class="line">if(n==0)</span><br><span class="line">   return 1;</span><br><span class="line"> else</span><br><span class="line">   return fac(n-1)*n;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">console.log(fac(8));</span><br><span class="line">// 40320 (1*2*3*4*5*6*7*8)</span><br></pre></td></tr></table></figure>
-<p>图解<br><img src="http://img.mukewang.com/5704a2d900017c7905020396.png" alt="递归"></p>
-<p>javascript 递归问题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">function f(x)&#123;</span><br><span class="line">    if(x == 1)&#123;</span><br><span class="line">        alert(x);</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        f(x - 1);</span><br><span class="line">        alert(x);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">f(5);</span><br><span class="line">//12345</span><br></pre></td></tr></table></figure></p>
-
+        <p>push ： 向数组的末尾添加值<br>pop  ： 与push相反，删除数组末尾的值并返回给调用者<br>join ： 将字符串数组拼成单个字符串。join方法的参数是链接数组元素之间的文本内容<br>unshift ：在数组末尾添加元素<br>shift ：在数组末尾删除元素</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">var mack = [] ;</span><br><span class="line">mack.push(&quot;Mack&quot;);</span><br><span class="line">mack.push(&quot;the&quot;,&quot;Knife&quot;);</span><br><span class="line">console.log(mack);</span><br><span class="line">// →[&quot;Mack&quot;,&quot;the&quot;,&quot;Knife&quot;]</span><br><span class="line"></span><br><span class="line">console.log(mack.join(&quot;&quot;));</span><br><span class="line">// →[Mack the Knife]</span><br><span class="line"></span><br><span class="line">console.log(mack.pop());</span><br><span class="line">// →Knife</span><br><span class="line"></span><br><span class="line">console.log(mack);</span><br><span class="line">// →[&quot;Mack&quot;,&quot;the&quot;]</span><br><span class="line"></span><br><span class="line">mack.unshift(&quot;eat&quot;);</span><br><span class="line">console.log(mack);</span><br><span class="line">// →[&quot;eat&quot;,&quot;Mack&quot;,&quot;the&quot;]</span><br><span class="line">mack.shift();</span><br><span class="line">console.log(mack);</span><br><span class="line">// →[&quot;Mack&quot;,&quot;the&quot;]</span><br></pre></td></tr></table></figure>
+<p>indexOf : 从数组第一个元素向后搜索，找出与参数相等的值在数组中的位置<br>lastIndexOf : 从数组最后一个元素向前搜索，找出与参数相等的值在数组中的位置<br>他们都接受一个可选参数，可以用来指定搜索的起始位置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">console.log([1,2,3,4,5].indexOf(2));</span><br><span class="line">// →1</span><br><span class="line">console.log([1,2,3,4,5].lastindexOf(2));</span><br><span class="line">// →3</span><br></pre></td></tr></table></figure>
+<p>slice : 该方法接受一个起始索引和一个结束索引，然后返回数组中两个索引范围内的元素。起始索引元素包含在返回结果中，但结束索引元素不会包含在返回结果中。<br>如果没有指定结束索引，slice会返回自起始位置之后的所有元素。对字符串来说，他也有一个具有相同功能的slice方法。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">console.log([0,1,2,3,4].slice(2,4));</span><br><span class="line">// →[2,3]</span><br><span class="line">console.log(&quot;coconuts&quot;.slice(4,7));</span><br><span class="line">// →nut</span><br><span class="line">console.log([0,1,2,3,4].slice(2));</span><br><span class="line">// →[2,3,4]</span><br></pre></td></tr></table></figure>
+<p>concat : 用于拼接两个数组，其作用类似于字符串的+运算符。</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">function remove(array,index)&#123;</span><br><span class="line">  return array.slice(0,index).concat(array.slice(index+1));</span><br><span class="line">&#125;</span><br><span class="line">console.log(remove([&quot;a&quot;,&quot;b&quot;,&quot;c&quot;,&quot;d&quot;,&quot;e&quot;],2));</span><br><span class="line">// →[&quot;a&quot;,&quot;b&quot;,&quot;d&quot;,&quot;e&quot;],</span><br></pre></td></tr></table></figure>
       
     </div>
     
@@ -303,16 +300,16 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/04/08/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/04/21/zifujishu/" rel="next" title="字符计数">
+                <i class="fa fa-chevron-left"></i> 字符计数
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/04/11/for/" rel="prev" title="for循环代替while计算乘方">
-                for循环代替while计算乘方 <i class="fa fa-chevron-right"></i>
+              <a href="/2016/04/29/bianli/" rel="prev" title="遍历映射表">
+                遍历映射表 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
